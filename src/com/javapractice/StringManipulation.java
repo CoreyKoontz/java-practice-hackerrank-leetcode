@@ -61,25 +61,84 @@ public class StringManipulation {
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (map.containsKey(c)) { // If map already contains the char
-                map.put(c, map.get(c) + 1); // update the key/value (only the value changes)
+            if (map.containsKey(c)) {           // If map already contains the char
+                map.put(c, map.get(c) + 1);     // update the key/value (only the value changes)
             } else {
-                map.put(c, 1); // if the map does not contain the key/value then add it
+                map.put(c, 1);                  // if the map does not contain the key/value then add it
             }
         }
-//        int solution = 0;
         // So now we have our filled in map with the number of each char in the string
         for (int i = 0; i < s.length(); i++) {
             if (map.get(s.charAt(i)) == 1)     // If the value of the current char(i) is one
-                return i + 1;
-//                solution = i + 1;                // that means it is unique and the first time
+                return i + 1;                  // it is unique and the first time
+        }                                      // this happens would be the first instance of it
+        return -1;                             // so we need to return i.
+    }                                          // i + 1 to make it 1-indexed
+
+
+    // ------------------------------------------------------ anagramRemover:
+    // Removes a sting in a list of strings if it is an anagram of a prior string in the list
+
+    public List<String> anagramRemover(List<String> list) {
+        // To store and return results:
+        List<String> result = new ArrayList<>();
+
+        // Duplicate checker: (Use HashSet instead of ArrayList to prevent duplicate values)
+        HashSet<String> found = new HashSet<>();
+
+        for (int i = 0; i < list.size(); i++) {
+
+            String string = list.get(i);
+//            System.out.println(string); // TEST (GOOD)
+
+            // Must sort the string elements to check for duplicates
+            String sortString = stringSort(string); // See below for sort method
+//            System.out.println(sortString); // TEST (GOOD)
+
+            if (!found.contains(sortString)){
+                result.add(string); // add the actual string to the result set
+                found.add(sortString); // add sorted string to the found set
+            }
+
         }
-        return -1;                               // this happens would be the first instance of it
-//                solution = -1;                   // so we need to return i. i + 1 to make it 1-indexed
-
-
+        return result;
     }
-//        return solution;
+
+    // Sorts an individual string alphabetically
+    public static String stringSort(String str){
+        char[] charArr = str.toCharArray();
+        Arrays.sort(charArr);
+        return new String(charArr);
+    }
+
+    // ------------------------------------------------------ numberNeeded:
+    // Minimum number of character deletions required to make the two strings anagrams.
+
+    public int numberNeeded(String first, String second) {
+        // Create and empty HashMap to input corresponding char(keys) and int(values):
+        Map<Character, Integer> count = new HashMap<>();
+
+        // Iterate through the first string as an array of chars and add each to the HashMap
+        for (char key : first.toCharArray()) {
+            // if count map already contains the current iteration of key, set value to its current value.
+            // Otherwise set to 0:
+            int value = count.getOrDefault(key, 0);
+            //add the old value to the new instance (+1):
+            count.put(key, (value + 1));
+        }
+        // Now we can iterate over the second string and compare it to the newly updated count map:
+        for (char key : second.toCharArray()) {
+            int value = count.getOrDefault(key, 0);
+            count.put(key, (value - 1));
+        }
+        // Add up the absolute value of the differences:
+        List<Integer> values = new ArrayList<>(count.values());
+        int counter = 0;
+        for (Integer value : values) {
+            counter += Math.abs(value);
+        }
+        return counter;
+    }
 }
 
 
