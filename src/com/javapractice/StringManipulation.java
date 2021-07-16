@@ -40,11 +40,11 @@ public class StringManipulation {
         Map<Character, Integer> count = new HashMap<>();
 
         for (char key : a.toCharArray()) {
-            int value = count.containsKey(key) ? count.get(key) : 0;
+            int value = count.getOrDefault(key, 0);
             count.put(key, (value + 1));
         }
         for (char key : b.toCharArray()) {
-            int value = count.containsKey(key) ? count.get(key) : 0;
+            int value = count.getOrDefault(key, 0);
             count.put(key, (value - 1));
         }
         List<Integer> values = new ArrayList<>(count.values());
