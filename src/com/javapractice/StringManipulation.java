@@ -35,6 +35,7 @@ public class StringManipulation {
     }
 
     // ------------------------------------------------------ Making Anagrams:
+
     public int makeAnagram(String a, String b) {
         Map<Character, Integer> count = new HashMap<>();
 
@@ -54,4 +55,31 @@ public class StringManipulation {
         return counter;
     }
 
+    // ------------------------------------------------------ firstUniqueCharacter in a string:
+
+    public int firstUniqueCharacter(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (map.containsKey(c)) { // If map already contains the char
+                map.put(c, map.get(c) + 1); // update the key/value (only the value changes)
+            } else {
+                map.put(c, 1); // if the map does not contain the key/value then add it
+            }
+        }
+//        int solution = 0;
+        // So now we have our filled in map with the number of each char in the string
+        for (int i = 0; i < s.length(); i++) {
+            if (map.get(s.charAt(i)) == 1)     // If the value of the current char(i) is one
+                return i + 1;
+//                solution = i + 1;                // that means it is unique and the first time
+        }
+        return -1;                               // this happens would be the first instance of it
+//                solution = -1;                   // so we need to return i. i + 1 to make it 1-indexed
+
+
+    }
+//        return solution;
 }
+
+

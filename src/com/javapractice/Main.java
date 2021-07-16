@@ -14,5 +14,11 @@ public class Main {
         // -------------------------------------------------- Making Anagrams:
         System.out.println(stringManipulation.makeAnagram("cde", "abc"));
         // TEST: GOOD
+
+        // -------------------------------------------------- firstUniqueCharacter in a string:
+        System.out.println(stringManipulation.firstUniqueCharacter("aabbbccccdeee"));
+        // TEST: GOOD
+
+        // ------------------------------
     }
 }
