@@ -55,5 +55,18 @@ public class Main {
         // -------------------------------------------------- Counting Valleys Warm-Up:
         System.out.println(WarmUpChallenge.countingValleys(10, "U, D, D, U, D, U, U, U, D, D"));
         // TEST: GOOD (2)
+
+        // -------------------------------------------------- Jumping on the Clouds:
+        List<Integer> clouds = new ArrayList();
+        clouds.add(0);
+        clouds.add(1);
+        clouds.add(0);
+        clouds.add(0);
+        clouds.add(1);
+        clouds.add(0);
+        clouds.add(1);
+
+        System.out.println(WarmUpChallenge.jumpingOnClouds(clouds));
+        // TEST: GOOD (4)
     }
 }

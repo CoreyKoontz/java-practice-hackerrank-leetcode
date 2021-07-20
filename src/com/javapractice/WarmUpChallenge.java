@@ -2,6 +2,7 @@ package com.javapractice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class WarmUpChallenge {
 
@@ -36,6 +37,20 @@ public class WarmUpChallenge {
                 v++;
         }
         return v;
+    }
+
+    // ------------------------------------------------------ Jumping on the Clouds:
+    // Can only move i+1 || i+2;
+    // Cannot land on a 1, only 0;
+    public static int jumpingOnClouds(List<Integer> c) {
+        int jumps = 0;
+        for (int i = 0; i < c.size() - 1; i++) {
+            if (c.get(i) == 0) {
+                i++;
+            }
+            jumps++;
+        }
+        return jumps;
     }
 
 }
