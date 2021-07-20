@@ -42,9 +42,9 @@ public class WarmUpChallenge {
     // ------------------------------------------------------ Jumping on the Clouds:
     // Can only move i+1 || i+2;
     // Cannot land on a 1, only 0;
-    public static int jumpingOnClouds(List<Integer> c) {
+    public int jumpingOnClouds(List<Integer> c) {
         int jumps = 0;
-        for (int i = 0; i < c.size() - 1; i++) {
+        for (int i = 0; i < c.size(); i++) {
             if (c.get(i) == 0) {
                 i++;
             }
@@ -52,5 +52,18 @@ public class WarmUpChallenge {
         }
         return jumps;
     }
+
+    // ------------------------------------------------------ Repeating Strings:
+//    public static long repeatedString(String s, long n) {
+//        char[] charArray = (s.substring(0, (int)n)).toCharArray();
+//        long charCount = 0;
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter a char:");
+//        char input = sc.next();
+//        for (char c : charArray) {
+//            c == ''
+//        }
+//        return 1;
+//    }
 
 }

@@ -7,8 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        StringManipulation stringManipulation;
-        stringManipulation = new StringManipulation();
+        StringManipulation stringManipulation = new StringManipulation();
+        WarmUpChallenge warmUpChallenge = new WarmUpChallenge();
+
 
         // -------------------------------------------------- Sherlock and the Valid String:
         System.out.println(stringManipulation.isValid("a"));
@@ -66,7 +67,12 @@ public class Main {
         clouds.add(0);
         clouds.add(1);
 
-        System.out.println(WarmUpChallenge.jumpingOnClouds(clouds));
+        System.out.println(warmUpChallenge.jumpingOnClouds(clouds));
         // TEST: GOOD (4)
+
+        // -------------------------------------------------- Repeating String:
+        String infStr = "abcabcabcabcabcabcbabc";
+        warmUpChallenge.repeatedString(infStr, 10);
+
     }
 }
