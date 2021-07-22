@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class WarmUpChallenge {
 
     // ------------------------------------------------------ Sales by Match:
-    public static int sockMerchant(int n, List ar) {
+    public int sockMerchant(int n, List ar) {
         int pairs = 0;
         List sockTypes = new ArrayList();
         for (Object sock : ar) {
@@ -22,7 +22,7 @@ public class WarmUpChallenge {
     }
 
     // ------------------------------------------------------ Counting Valleys:
-    public static int countingValleys(int steps, String path) {
+    public int countingValleys(int steps, String path) {
         int lvl = 0;
         int v = 0;
         for (char c : path.toCharArray()) {
@@ -54,16 +54,19 @@ public class WarmUpChallenge {
     }
 
     // ------------------------------------------------------ Repeating Strings:
-//    public static long repeatedString(String s, long n) {
-//        char[] charArray = (s.substring(0, (int)n)).toCharArray();
-//        long charCount = 0;
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Enter a char:");
-//        char input = sc.next();
-//        for (char c : charArray) {
-//            c == ''
+    public long repeatedString(String s, long n) {
+        String sRepeat = s.repeat((int)n);
+//        if (s.length() < n) {
+//            n = s.length();
 //        }
-//        return 1;
-//    }
+        char[] charArray = (sRepeat.substring(0, (int)n)).toCharArray();
+        long charCount = 0;
+        for (char c : charArray) {
+            if (c == 'a')
+                charCount++;
+        }
+        System.out.println(charCount);
+        return charCount;
+    }
 
 }

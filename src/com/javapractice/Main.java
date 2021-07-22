@@ -50,11 +50,11 @@ public class Main {
         numbers.add(4);
         numbers.add(4);
 
-        System.out.println(WarmUpChallenge.sockMerchant(10, numbers));
+        System.out.println(warmUpChallenge.sockMerchant(10, numbers));
         // TEST: GOOD (4)
 
         // -------------------------------------------------- Counting Valleys Warm-Up:
-        System.out.println(WarmUpChallenge.countingValleys(10, "U, D, D, U, D, U, U, U, D, D"));
+        System.out.println(warmUpChallenge.countingValleys(10, "U, D, D, U, D, U, U, U, D, D"));
         // TEST: GOOD (2)
 
         // -------------------------------------------------- Jumping on the Clouds:
@@ -71,8 +71,7 @@ public class Main {
         // TEST: GOOD (4)
 
         // -------------------------------------------------- Repeating String:
-        String infStr = "abcabcabcabcabcabcbabc";
+        String infStr = "aba"; // 7 - a
         warmUpChallenge.repeatedString(infStr, 10);
-
     }
 }
