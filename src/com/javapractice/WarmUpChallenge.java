@@ -59,7 +59,7 @@ public class WarmUpChallenge {
 //        if (s.length() < n) {
 //            n = s.length();
 //        }
-        char[] charArray = (sRepeat.substring(0, (int)n)).toCharArray();
+        char[] charArray = (sRepeat.substring(0, (int) n)).toCharArray();
         long charCount = 0;
         for (char c : charArray) {
             if (c == 'a')

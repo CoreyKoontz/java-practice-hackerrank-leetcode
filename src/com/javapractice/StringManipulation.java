@@ -55,7 +55,7 @@ public class StringManipulation {
         return counter;
     }
 
-    // ------------------------------------------------------ firstUniqueCharacter in a string:
+    // * ------------------------------------------------------ firstUniqueCharacter in a string:
 
     public int firstUniqueCharacter(String s) {
         Map<Character, Integer> map = new HashMap<>();
@@ -76,7 +76,7 @@ public class StringManipulation {
     }                                          // i + 1 to make it 1-indexed
 
 
-    // ------------------------------------------------------ anagramRemover:
+    // * ------------------------------------------------------ anagramRemover:
     // Removes a sting in a list of strings if it is an anagram of a prior string in the list
 
     public List<String> anagramRemover(List<String> list) {
