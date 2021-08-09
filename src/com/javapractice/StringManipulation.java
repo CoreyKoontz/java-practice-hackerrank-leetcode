@@ -105,7 +105,7 @@ public class StringManipulation {
     }
 
     // Sorts an individual string alphabetically
-    public static String stringSort(String str){
+    private String stringSort(String str){
         char[] charArr = str.toCharArray();
         Arrays.sort(charArr);
         return new String(charArr);
