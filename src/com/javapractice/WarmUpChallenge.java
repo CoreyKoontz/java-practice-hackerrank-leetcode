@@ -54,19 +54,44 @@ public class WarmUpChallenge {
     }
 
     // ------------------------------------------------------ Repeating Strings:
+    // There is a string, s, of lowercase English letters that is repeated (infinitely many times.)<- Ignore this last bit
+    // Given an integer, n, find and print the number of letter a's in the first n letters of the infinite string.
+
     public long repeatedString(String s, long n) {
-        String sRepeat = s.repeat((int)n);
-//        if (s.length() < n) {
-//            n = s.length();
-//        }
-        char[] charArray = (sRepeat.substring(0, (int) n)).toCharArray();
-        long charCount = 0;
-        for (char c : charArray) {
-            if (c == 'a')
-                charCount++;
-        }
-        System.out.println(charCount);
-        return charCount;
+    //First get the total number of completed strings: (long to be safe)
+        long numOfStrings = n / s.length();
+    //Then the number of left over characters:
+        long remainingChars = n % s.length();
+    // Check if there are any 'a's in s at all (If the list was actually infinite this probably wouldn't work):
+        if (!s.contains("a")) return 0;
+    // return the number of 'a's in the partial string OR the number of 'a's in the completed plus the partial strings:
+        return n < s.length() ?
+                countA(s, n) :
+                numOfStrings * countA(s, s.length()) + countA(s, remainingChars);
+    }
+    // 'a' counter method for repeatedString method
+    public static long countA(String s, long length) {
+        int a = 0;
+        for (int i = 0; i < length; i++) {
+            if (s.charAt(i) == 'a') a++;
+    }
+        return a;
     }
 
+
+
+
+
 }
+//        String sRepeat = s.repeat((int)n);
+////        if (s.length() < n) {
+////            n = s.length();
+////        }
+//        char[] charArray = (sRepeat.substring(0, (int) n)).toCharArray();
+//        long charCount = 0;
+//        for (char c : charArray) {
+//            if (c == 'a')
+//                charCount++;
+//        }
+//        System.out.println(charCount);
+//        return charCount;

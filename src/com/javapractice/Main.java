@@ -81,6 +81,7 @@ public class Main {
         // -------------------------------------------------- Repeating String:
         String infStr = "aba"; // 7 - a
         System.out.println("Repeating String:");
-        warmUpChallenge.repeatedString(infStr, 1000000000);
+        System.out.println(warmUpChallenge.repeatedString(infStr, 1000000000));
+        // TEST: GOOD (666666667)
     }
 }
