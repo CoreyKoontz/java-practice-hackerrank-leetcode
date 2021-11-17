@@ -1,5 +1,8 @@
 package com.javapractice;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class ioPractice {
@@ -14,7 +17,19 @@ public class ioPractice {
             // Will need to adjust the number of space characters depending on the
             // length of the array element
         }
-
         System.out.println("================================");
     }
+
+    public void ioTable() throws IOException {
+        {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+            int N = Integer.parseInt(bufferedReader.readLine().trim());
+            for (int i=1;i<=10;i++) {
+                int x = i*N;
+                System.out.printf("%d x %d = %d%n", N, i, x);
+            }
+            bufferedReader.close();
+        }
+    }
+
 }

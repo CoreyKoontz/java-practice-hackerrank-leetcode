@@ -1,11 +1,12 @@
 package com.javapractice;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         StringManipulation stringManipulation = new StringManipulation();
         WarmUpChallenge warmUpChallenge = new WarmUpChallenge();
@@ -88,6 +89,9 @@ public class Main {
         // -------------------------------------------------- input formatting:
         ioPractice.printer();
         // TEST: GOOD
+
+        // -------------------------------------------------- ioTable:
+        ioPractice.ioTable();
     }
 
 }
