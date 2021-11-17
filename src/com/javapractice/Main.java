@@ -9,6 +9,7 @@ public class Main {
 
         StringManipulation stringManipulation = new StringManipulation();
         WarmUpChallenge warmUpChallenge = new WarmUpChallenge();
+        ioPractice ioPractice = new ioPractice();
 
 
         // -------------------------------------------------- Sherlock and the Valid String:
@@ -83,5 +84,10 @@ public class Main {
         System.out.println("Repeating String:");
         System.out.println(warmUpChallenge.repeatedString(infStr, 1000000000));
         // TEST: GOOD (666666667)
+
+        // -------------------------------------------------- input formatting:
+        ioPractice.printer();
+        // TEST: GOOD
     }
+
 }
