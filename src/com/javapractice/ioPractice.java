@@ -3,7 +3,6 @@ package com.javapractice;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ioPractice {
@@ -41,16 +40,15 @@ public class ioPractice {
     // Throwing error on hackerrank
     // (Exception in thread "main" java.util.NoSuchElementException)
 
-    public void javaLoopsII(){
+    public void javaLoopsII() throws Exception{
         Scanner in = new Scanner(System.in);
-
         int t=in.nextInt();
         for(int i=0;i<10;i++){
-
-            int a = Integer.parseInt(in.next());
-            int b = in.nextInt();
-            int n = in.nextInt();
-
+            while(in.hasNextLine()) {
+                int a = in.nextInt();
+                int b = in.nextInt();
+                int n = in.nextInt();
+            }
             for (int x=0; x<n; x++){
                 // a = a + (2^x) b
                 // must cast to int to use Math.pow
