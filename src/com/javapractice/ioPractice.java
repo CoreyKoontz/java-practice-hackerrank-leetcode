@@ -11,10 +11,10 @@ public class ioPractice {
     public void printer() {
         Scanner sc = new Scanner(System.in);
         System.out.println("================================");
-        for(int i=0; i<3; i++){
+        for (int i = 0; i < 3; i++) {
             String s1 = sc.next().trim();
             int x = sc.nextInt();
-            System.out.printf("%-14s %03d%n",s1, x);
+            System.out.printf("%-14s %03d%n", s1, x);
             // Will need to adjust the number of space characters depending on the
             // length of the array element
         }
@@ -27,8 +27,8 @@ public class ioPractice {
         {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
             int N = Integer.parseInt(bufferedReader.readLine().trim());
-            for (int i=1;i<=10;i++) {
-                int x = i*N;
+            for (int i = 1; i <= 10; i++) {
+                int x = i * N;
                 System.out.printf("%d x %d = %d%n", N, i, x);
             }
             bufferedReader.close();
@@ -40,16 +40,16 @@ public class ioPractice {
     // Throwing error on hackerrank
     // (Exception in thread "main" java.util.NoSuchElementException)
 
-    public void javaLoopsII() throws Exception{
+    public void javaLoopsII() throws Exception {
         Scanner in = new Scanner(System.in);
-        int t=in.nextInt();
-        for(int i=0;i<10;i++){
-            while(in.hasNextLine()) {
-                int a = in.nextInt();
-                int b = in.nextInt();
-                int n = in.nextInt();
-            }
-            for (int x=0; x<n; x++){
+        int t = in.nextInt();
+        for (int i = 0; in.hasNextInt(); i++) {
+
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+
+            for (int x = 0; x < n; x++) {
                 // a = a + (2^x) b
                 // must cast to int to use Math.pow
                 a += (int) (Math.pow(2, x) * b);
@@ -60,3 +60,4 @@ public class ioPractice {
         in.close();
     }
 }
+
